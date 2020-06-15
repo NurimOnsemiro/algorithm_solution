@@ -1,3 +1,7 @@
+/*
+*	https://www.algospot.com/judge/problem/read/QUADTREE
+*/
+
 #include <iostream>
 #include <array>
 #include <string>
@@ -73,7 +77,6 @@ int foo(std::string& str, const int& currIndex) {
 int main() {
 	int numTests{ 0 };
 	cin >> numTests;
-	//cout << "numTests=" << numTests << endl;
 
 	std::string str;
 
