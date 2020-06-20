@@ -1,8 +1,10 @@
-/*
-*	https://www.algospot.com/judge/problem/read/QUADTREE
-*/
+/**
+ * https://www.algospot.com/judge/problem/read/QUADTREE
+ * °á°ú: 0ms
+ */
 
 #include <iostream>
+#include <cstdio>
 #include <array>
 #include <string>
 #include <cstring>
@@ -14,7 +16,7 @@ class game_manager {
 public:
 	void input_data()
 	{
-		cin >> arr.data();
+		scanf("%s", arr.data());
 	}
 
 	//INFO: ÄõµåÆ®¸® Å½»ö
@@ -69,7 +71,7 @@ public:
 
 	void output_data()
 	{
-		cout << arr.data() << endl;
+		printf("%s\n", arr.data());
 	}
 
 	void clear_data()
@@ -84,7 +86,7 @@ private:
 
 int main() {
 	int numTests{ 0 };
-	cin >> numTests;
+	scanf("%d", &numTests);
 
 	game_manager gm;
 

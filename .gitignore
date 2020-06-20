@@ -4,3 +4,6 @@
 **/*.VC.VC.opendb
 **/Debug/**/*
 **/*.vcxproj.user
+**/*.d.ts
+**/*.js
+**/node_modules/**/*
