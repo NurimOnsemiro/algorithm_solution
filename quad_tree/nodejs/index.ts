@@ -23,13 +23,13 @@ class game_manager{
     this.temp = Buffer.from([]);
   }
 
-  input_data(data: string)
+  input_data(data: string): void
   {
     this.buffer = Buffer.from(data);
     this.temp = Buffer.from(data);
   }
 
-  find_quadtree(currIndex: number[]) : number
+  find_quadtree(currIndex: number[]): number
   {
     const head: string = this.buffer.toString()[currIndex[0]];
     currIndex[0]++;
@@ -67,28 +67,19 @@ class game_manager{
     return totalLength;
   }
 
-  find_answer()
+  find_answer(): void
   {
     let currIndex: number[] = [0];
     this.find_quadtree(currIndex);
   }
 
-  clear_data()
-  {
-  }
-
-  output_data()
+  output_data(): void
   {
     console.log(this.buffer.toString());
   }
-
-  hello_world()
-  {
-    console.log(`Hello, ${this.buffer.toString()}!`);
-  }
 }
 
-function main()
+function main(): void
 {
   let numTests: number = 0;
   numTests = Number(input[0]);
