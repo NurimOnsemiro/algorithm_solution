@@ -10,7 +10,8 @@
 
 using namespace std;
 
-array<int, 20000> fences;
+//INFO: 스택 사용으로 최대 크기 + 1 위치를 접근할 수 있음
+array<int, 20001> fences;
 int numFences{ 0 };
 
 int find_max_size_fence() {
