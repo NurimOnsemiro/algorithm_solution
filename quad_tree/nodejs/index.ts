@@ -73,18 +73,9 @@ class game_manager{
     this.find_quadtree(currIndex);
   }
 
-  clear_data()
-  {
-  }
-
   output_data()
   {
     console.log(this.buffer.toString());
-  }
-
-  hello_world()
-  {
-    console.log(`Hello, ${this.buffer.toString()}!`);
   }
 }
 
