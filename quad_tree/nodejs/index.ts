@@ -52,6 +52,7 @@ class game_manager{
     const lowerEndPos: number = lowerStartPos + lowerLength;
     const newUpperStartPos: number = startPos + lowerLength;
 
+    //INFO: 길이가 더 긴 문자열을 temp에 복사해야 복사 도중 데이터가 훼손되지 않는다
     if(upperLength > lowerLength){
       this.buffer.copy(this.temp, 0, startPos, upperEndPos);
       this.buffer.copy(this.buffer, startPos, lowerStartPos, lowerEndPos);
@@ -73,7 +74,7 @@ class game_manager{
     this.find_quadtree(currIndex);
   }
 
-  output_data(): void
+  output_data()
   {
     console.log(this.buffer.toString());
   }
