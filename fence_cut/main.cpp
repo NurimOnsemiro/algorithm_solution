@@ -1,6 +1,6 @@
 /**
  * https://www.algospot.com/judge/problem/read/FENCE
- * 결과: 
+ * 결과: 56ms
  */
 
 #include <iostream>
