@@ -1,11 +1,12 @@
 /**
 * https://www.algospot.com/judge/problem/read/FENCE
-* 실행시간: 2400ms
+* 실행시간: 672ms
  */
 
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
@@ -92,22 +93,23 @@ func findMaxSizeFence() int {
 }
 
 func main() {
+	r := bufio.NewReader(os.Stdin)
 	var numTests int = 0
 	stk = Stack{top: 0}
 
-	fmt.Fscan(os.Stdin, &numTests)
+	fmt.Fscan(r, &numTests)
 
 	for numTests > 0 {
 		//INFO: 울타리 개수 입력
-		fmt.Fscan(os.Stdin, &numFences)
+		fmt.Fscan(r, &numFences)
 
 		for i := 0; i < numFences; i++ {
-			fmt.Fscan(os.Stdin, &fences[i])
+			fmt.Fscan(r, &fences[i])
 		}
 
 		maxSquareSize := findMaxSizeFence()
 
-		fmt.Fprintln(os.Stdout, maxSquareSize)
+		fmt.Println(maxSquareSize)
 
 		numTests--
 	}
