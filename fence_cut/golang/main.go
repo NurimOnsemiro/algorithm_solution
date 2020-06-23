@@ -1,6 +1,6 @@
 /**
 * https://www.algospot.com/judge/problem/read/FENCE
-* 실행시간: 672ms
+* 실행시간: 84ms
  */
 
 package main
@@ -9,10 +9,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
 
 //INFO: 스택 사용으로 최대 크기 + 1 위치를 접근할 수 있음
-var fences [20001]int
+var fences []int
 var numFences int
 var stk Stack
 
@@ -92,19 +94,37 @@ func findMaxSizeFence() int {
 	return maxSquareSize
 }
 
+func getNumbersFromTextLine(str string) []int {
+	strArr := strings.Split(str, " ")
+	var intArr []int
+	for _, val := range strArr {
+		num, err := strconv.Atoi(val)
+		if err != nil {
+			continue
+		}
+		intArr = append(intArr, num)
+	}
+	return intArr
+}
+
 func main() {
 	r := bufio.NewReader(os.Stdin)
 	var numTests int = 0
+	var str string
 	stk = Stack{top: 0}
 
-	fmt.Fscan(r, &numTests)
+	fmt.Fscanln(r, &numTests)
 
 	for numTests > 0 {
 		//INFO: 울타리 개수 입력
-		fmt.Fscan(r, &numFences)
+		fmt.Fscanln(r, &numFences)
 
-		for i := 0; i < numFences; i++ {
-			fmt.Fscan(r, &fences[i])
+		str, _ = r.ReadString('\n')
+		str = strings.Trim(str, "\r\n")
+		fences = getNumbersFromTextLine(str)
+
+		for len(fences) <= numFences {
+			fences = append(fences, 0)
 		}
 
 		maxSquareSize := findMaxSizeFence()
